@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy — eXpand Systems</title>
+  <meta name="description" content="Privacy notice for the eXpand Systems website and contact form." />
+  <link rel="canonical" href="https://expand.systems/privacy.html" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Privacy — eXpand Systems" />
+  <meta property="og:image" content="https://expand.systems/images/og-expand-systems.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20260716" />
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">e<span>X</span>pand Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Book a Strategy Call</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Privacy</span>
+    <h1>Your information stays purposeful.</h1>
+    <p>We collect only what we need to respond to inquiries and operate this website.</p>
+  </div>
+</section>
+
+<main class="section">
+  <div class="container legal-copy">
+    <p class="legal-updated">Last updated: July 16, 2026</p>
+
+    <h2>Information you provide</h2>
+    <p>When you submit our contact form, we receive the name, email address, organization, service interest, and message you choose to provide. We use this information only to review and respond to your inquiry, discuss a potential engagement, and maintain appropriate business records.</p>
+
+    <h2>Service providers and external links</h2>
+    <p>Contact-form submissions are processed by Formspree. Scheduling is provided through Calendly when you follow the scheduling link. This website also loads fonts from Google Fonts. These providers may process technical information under their own privacy terms. We do not sell your personal information.</p>
+
+    <h2>Retention and protection</h2>
+    <p>We retain inquiry information only as long as reasonably needed for communication, business administration, legal obligations, and dispute prevention. We use reasonable safeguards, but no online transmission or storage system can be guaranteed completely secure.</p>
+
+    <h2>Your choices</h2>
+    <p>You may ask us to correct or delete information you submitted, subject to applicable legal and recordkeeping requirements. Use the <a href="contact.html">contact form</a> and state that your message concerns privacy.</p>
+
+    <h2>Changes to this notice</h2>
+    <p>We may update this notice as our website or service providers change. The date above identifies the latest version.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">e<span>X</span>pand Systems</div>
+        <p>Technology + Finance Alignment · Enterprise Integration · Financial Strategy · Operational Excellence.<br>Princeton Junction, NJ · Serving clients across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Send a message</a></li>
+          <li><a href="https://expand.systems">expand.systems</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 eXpand Systems LLC. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  });
+</script>
+</body>
+</html>
