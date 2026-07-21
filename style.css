@@ -146,6 +146,22 @@ nav {
 .section-title { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 700; letter-spacing: -.03em; color: var(--white); margin-bottom: 14px; line-height: 1.15; }
 .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: 56px; }
 
+/* ── Mission ── */
+.mission-section { position: relative; overflow: hidden; }
+.mission-section::after {
+  content: ''; position: absolute; width: 420px; height: 420px; right: -180px; top: -220px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(244,162,97,.18), rgba(244,162,97,0) 68%); pointer-events: none;
+}
+.mission-intro { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: end; margin-bottom: 44px; }
+.mission-intro .section-title { margin-bottom: 0; }
+.mission-statement { color: var(--text); font-size: 1.12rem; line-height: 1.75; max-width: 610px; }
+.mission-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; position: relative; z-index: 1; }
+.mission-card { background: #FFFFFF; border: 1px solid var(--border); border-radius: 16px; padding: 30px; box-shadow: 0 12px 32px rgba(20,33,61,.05); }
+.mission-card--outcome { background: linear-gradient(135deg, #EDF4FF 0%, #FFF3E3 100%); border-color: #B8CBEF; }
+.mission-number { display: block; font-family: 'Space Mono', monospace; color: var(--blue-light); font-size: .72rem; font-weight: 700; letter-spacing: .1em; margin-bottom: 18px; }
+.mission-card h3 { color: var(--white); font-size: 1.05rem; line-height: 1.35; margin-bottom: 10px; }
+.mission-card p { color: var(--muted); font-size: .88rem; line-height: 1.65; }
+
 /* ── Principals ── */
 .principals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
 .principal-card {
@@ -319,6 +335,8 @@ footer { background: var(--navy); border-top: 4px solid var(--warm); padding: 64
 
 /* ── Responsive ── */
 @media (max-width: 900px) {
+  .mission-intro { grid-template-columns: 1fr; gap: 24px; }
+  .mission-grid { grid-template-columns: 1fr; }
   .principals-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .services-grid--2col { grid-template-columns: 1fr; }
