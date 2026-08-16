@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://expand.systems/sitemap.xml
+Sitemap: https://www.expand.systems/sitemap.xml
