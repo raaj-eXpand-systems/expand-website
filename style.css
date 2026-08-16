@@ -288,6 +288,7 @@ nav {
 
 /* ── Services Page ── */
 .service-detail { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 48px; margin-bottom: 24px; box-shadow: 0 12px 32px rgba(20,33,61,.05); }
+.service-detail--featured { border-color: #9ABAF4; background: linear-gradient(135deg,#F4F8FF 0%,#FFFFFF 58%,#FFF8EE 100%); }
 .service-detail h2 { font-size: 1.45rem; font-weight: 700; color: var(--white); letter-spacing: -.02em; margin-bottom: 12px; }
 .service-detail > p { font-size: .97rem; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
 .service-list { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
@@ -333,6 +334,8 @@ nav {
 .narratrace-preview-copy { display: flex; flex-direction: column; justify-content: center; padding: 64px; }
 .product-status { display: inline-flex; align-items: center; align-self: flex-start; gap: 9px; margin-bottom: 26px; padding: 7px 13px; border: 1px solid rgba(22,138,102,.28); border-radius: 100px; color: #116F53; background: rgba(22,138,102,.08); font: 700 .68rem 'Space Mono',monospace; letter-spacing: .08em; text-transform: uppercase; }
 .product-status span { width: 7px; height: 7px; border-radius: 50%; background: #168A66; box-shadow: 0 0 0 4px rgba(22,138,102,.12); }
+.product-status--beta { color: #76552C; border-color: rgba(163,109,39,.3); background: rgba(211,162,91,.12); }
+.product-status--beta span { background: #D3A25B; box-shadow: 0 0 0 4px rgba(211,162,91,.16); }
 .narratrace-lockup { display: flex; align-items: center; gap: 13px; margin-bottom: 22px; color: #2A2016; font: 700 1.35rem Georgia,serif; }
 .narratrace-lockup img { width: 48px; height: 48px; border-radius: 10px; }
 .narratrace-preview-copy h3 { max-width: 600px; margin-bottom: 18px; color: #2A2016; font: 700 clamp(1.8rem,3vw,2.65rem)/1.12 Georgia,serif; letter-spacing: -.025em; }
@@ -422,6 +425,7 @@ footer { background: var(--navy); border-top: 4px solid var(--warm); padding: 64
   .footer-bottom { flex-direction: column; text-align: center; }
   .hero { min-height: auto; padding: 72px 24px; }
   .section { padding: 64px 24px; }
+  .service-detail { padding: 30px 22px; }
   .narratrace-preview-copy { padding: 38px 26px; }
   .narratrace-preview-visual { min-height: 340px; padding: 25px; }
   .narratrace-preview-visual > img { min-height: 290px; border-width: 7px; }
