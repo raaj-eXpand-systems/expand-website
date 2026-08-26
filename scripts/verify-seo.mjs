@@ -78,10 +78,22 @@ for (const canonical of pages.values()) {
 }
 
 const policy = JSON.parse(fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'))
-  .headers[0].headers.find(({ key }) => key === 'Content-Security-Policy').value
+const csp = policy.headers[0].headers.find(({ key }) => key === 'Content-Security-Policy').value
 if (jsonLdMatch) {
   const hash = crypto.createHash('sha256').update(jsonLdMatch[1]).digest('base64')
-  if (!policy.includes(`'sha256-${hash}'`)) failures.push('vercel.json: CSP hash for Organization/WebSite JSON-LD')
+  if (!csp.includes(`'sha256-${hash}'`)) failures.push('vercel.json: CSP hash for Organization/WebSite JSON-LD')
+}
+
+const expectedRedirects = new Map([
+  ['/services-5', '/services.html'],
+  ['/about-1', '/about.html'],
+  ['/about-1-1', '/about.html'],
+])
+for (const [source, destination] of expectedRedirects) {
+  const redirect = policy.redirects?.find(item => item.source === source)
+  if (redirect?.destination !== destination || redirect?.permanent !== true) {
+    failures.push(`vercel.json: permanent legacy redirect ${source} -> ${destination}`)
+  }
 }
 
 if (failures.length) throw new Error(`SEO verification failed:\n${failures.join('\n')}`)

@@ -29,5 +29,22 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/services-5",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-1",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-1-1",
+      "destination": "/about.html",
+      "permanent": true
+    }
   ]
 }
