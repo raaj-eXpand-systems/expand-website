@@ -363,6 +363,11 @@ nav {
 .product-capabilities strong, .product-capabilities span { display: block; }
 .product-capabilities strong { margin-bottom: 5px; color: var(--white); font-size: .88rem; }
 .product-capabilities span { color: var(--muted); font-size: .79rem; line-height: 1.5; }
+.product-integration-note { margin: -10px 0 28px; color: var(--muted); font-size: .83rem; line-height: 1.65; }
+.product-integration-note strong { color: var(--white); }
+.product-legal-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 18px; font-size: .8rem; }
+.product-legal-links a { color: var(--blue-light); text-decoration: none; }
+.product-legal-links a:hover, .product-legal-links a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
 .product-principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 42px; }
 .product-principles article { padding: 30px; border: 1px solid var(--border); border-top: 3px solid var(--blue); border-radius: 12px; background: var(--bg-card); }
 .product-principles article > span { color: var(--blue-light); font: 700 .72rem 'Space Mono',monospace; }

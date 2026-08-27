@@ -43,13 +43,33 @@ for (const [file, canonical] of pages) {
 const publicSource = [...pages.keys(), 'style.css'].map(file => fs.readFileSync(path.join(root, file), 'utf8')).join('\n')
 if (/\b(?:public\s+)?beta\b|coming\s+soon/i.test(publicSource)) failures.push('Public source contains beta or coming-soon positioning')
 if (/Princeton(?:\s+Junction)?/i.test(publicSource)) failures.push('Public source contains a prohibited municipality')
+if (/\bDelaware\b/i.test(publicSource)) failures.push('Public source contains an obsolete Delaware reference')
+if (/Amazon\s+Glacier|\bcold[-\s]storage\b/i.test(publicSource)) failures.push('Public source contains an inactive deep-storage claim')
+if (/instant(?:ly)?\s+(?:permanent\s+)?delet|delete(?:d|s)?\s+instant(?:ly)?/i.test(publicSource)) failures.push('Public source contains an unsupported instant-deletion claim')
 if (/https:\/\/www\.getnarratrace\.com/i.test(publicSource)) failures.push('Narratrace link is not canonical')
+
+for (const file of pages.keys()) {
+  const html = fs.readFileSync(path.join(root, file), 'utf8')
+  if (!html.includes('© 2026 Expand Systems LLC. All rights reserved.')) failures.push(`${file}: exact legal entity copyright`)
+}
 
 const products = fs.readFileSync(path.join(root, 'products.html'), 'utf8')
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
 for (const [file, html] of [['index.html', home], ['products.html', products]]) {
   if (!html.includes('href="https://getnarratrace.com/"')) failures.push(`${file}: canonical Narratrace call to action`)
-  if (!html.includes('Available now')) failures.push(`${file}: production availability status`)
+  if (!html.includes('Available worldwide')) failures.push(`${file}: global production availability status`)
+}
+for (const route of ['privacy', 'terms', 'cookies']) {
+  if (!products.includes(`href="https://getnarratrace.com/${route}"`)) failures.push(`products.html: canonical Narratrace ${route} link`)
+}
+if (!products.includes('Google Photos Picker lets you import only the photos and videos you deliberately select.')) {
+  failures.push('products.html: accurate Google Photos Picker scope')
+}
+if (!products.includes('Narratrace does not currently connect to YouTube or Amazon Photos.')) {
+  failures.push('products.html: current consumer-media integration scope')
+}
+if (!products.includes('Send memories now or later through recipient review and revocable, expiring access links.')) {
+  failures.push('products.html: verified recipient delivery safeguards')
 }
 
 const jsonLdMatch = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)
