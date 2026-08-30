@@ -55,6 +55,7 @@ for (const file of pages.keys()) {
 
 const products = fs.readFileSync(path.join(root, 'products.html'), 'utf8')
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
+const styles = fs.readFileSync(path.join(root, 'style.css'), 'utf8')
 const sunsetAssets = [640, 1200, 1920].flatMap(width => ['jpg', 'webp'].map(extension => `images/mount-rundle-vermilion-lakes-sunset-${width}.${extension}`))
 for (const asset of sunsetAssets) {
   if (!fs.existsSync(path.join(root, asset))) failures.push(`responsive Narratrace image asset ${asset}`)
@@ -81,6 +82,14 @@ if (!products.includes('Send memories now or later through recipient review and 
 }
 for (const context of ['Mount Rundle', 'Vermilion Lakes', 'Banff', 'Sunset', 'Family trip', 'Letter to our family', 'June 29, 2030 at 9:30 PM']) {
   if (!products.includes(context)) failures.push(`products.html: Narratrace example context ${context}`)
+}
+for (const selector of ['.narratrace-preview-visual picture img', '.product-photo-frame img']) {
+  const ruleStart = styles.indexOf(`${selector} {`)
+  const ruleEnd = ruleStart === -1 ? -1 : styles.indexOf('}', ruleStart)
+  const rule = ruleEnd === -1 ? '' : styles.slice(ruleStart, ruleEnd)
+  if (!/height:\s*auto/.test(rule) || /object-fit:\s*cover/.test(rule)) {
+    failures.push(`style.css: full responsive Narratrace image for ${selector}`)
+  }
 }
 
 const jsonLdMatch = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)

@@ -329,7 +329,7 @@ nav {
 .narratrace-preview-visual { position: relative; min-height: 520px; padding: 42px; background: #1D2B38; overflow: hidden; }
 .narratrace-preview-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 45%,rgba(15,22,28,.68)); pointer-events: none; }
 .narratrace-preview-visual picture { display: block; }
-.narratrace-preview-visual picture img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border: 10px solid #F8F1E5; box-shadow: 0 16px 35px rgba(0,0,0,.32); transform: rotate(-2deg); }
+.narratrace-preview-visual picture img { display: block; width: 100%; height: auto; border: 10px solid #F8F1E5; box-shadow: 0 16px 35px rgba(0,0,0,.32); transform: rotate(-2deg); }
 .memory-note { position: absolute; z-index: 1; left: 62px; right: 42px; bottom: 42px; color: #FFF9EE; font-family: Georgia,serif; font-size: 1.25rem; }
 .memory-note span { display: block; margin-bottom: 5px; color: #D3A25B; font: 600 .67rem 'Space Mono',monospace; letter-spacing: .16em; text-transform: uppercase; }
 .narratrace-preview-copy { display: flex; flex-direction: column; justify-content: center; padding: 64px; }
@@ -352,7 +352,7 @@ nav {
 .product-feature-visual::before { content: ''; position: absolute; width: 210px; height: 210px; top: -44px; right: -38px; border: 1px solid rgba(211,162,91,.35); border-radius: 50%; }
 .product-photo-frame { overflow: hidden; border: 12px solid #F8F1E5; background: #F8F1E5; box-shadow: 0 22px 50px rgba(0,0,0,.35); transform: rotate(-2deg); }
 .product-photo-frame picture { display: block; }
-.product-photo-frame img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; }
+.product-photo-frame img { display: block; width: 100%; height: auto; }
 .product-memory-card { position: absolute; right: 24px; bottom: 28px; width: min(360px,calc(100% - 48px)); padding: 23px; border: 1px solid #DBC9AC; border-radius: 12px; background: #FCF7ED; box-shadow: 0 16px 35px rgba(0,0,0,.22); transform: rotate(1deg); }
 .product-memory-card span { color: #76552C; font: 700 .65rem 'Space Mono',monospace; letter-spacing: .12em; text-transform: uppercase; }
 .product-memory-card strong { display: block; margin: 7px 0; color: #2A2016; font: 700 1.2rem Georgia,serif; }
