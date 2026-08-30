@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20260816a" />
+  <link rel="stylesheet" href="style.css?v=20260830a" />
 </head>
 <body>
 <nav>
@@ -49,8 +49,19 @@
     <div class="container">
       <article class="product-feature">
         <div class="product-feature-visual">
-          <div class="product-photo-frame"><img src="images/narratrace-family-memory.png" alt="A treasured family wedding photograph from 1967" /></div>
-          <div class="product-memory-card"><span>One photograph</span><strong>A lifetime of stories</strong><p>Preserved privately for the people who matter.</p></div>
+          <div class="product-photo-frame">
+            <picture>
+              <source type="image/webp" srcset="images/mount-rundle-vermilion-lakes-sunset-640.webp 640w, images/mount-rundle-vermilion-lakes-sunset-1200.webp 1200w, images/mount-rundle-vermilion-lakes-sunset-1920.webp 1920w" sizes="(max-width: 640px) calc(100vw - 86px), (max-width: 900px) calc(100vw - 160px), 470px" />
+              <img src="images/mount-rundle-vermilion-lakes-sunset-1200.jpg" srcset="images/mount-rundle-vermilion-lakes-sunset-640.jpg 640w, images/mount-rundle-vermilion-lakes-sunset-1200.jpg 1200w, images/mount-rundle-vermilion-lakes-sunset-1920.jpg 1920w" sizes="(max-width: 640px) calc(100vw - 86px), (max-width: 900px) calc(100vw - 160px), 470px" width="1200" height="900" decoding="async" alt="Mount Rundle glowing at sunset and reflected in Vermilion Lakes near Banff" />
+            </picture>
+          </div>
+          <div class="product-memory-card">
+            <span>Illustrative family trip · June 29th, 2025</span>
+            <strong>Sunset at Vermilion Lakes</strong>
+            <p>At day’s last light, Mount Rundle turned gold above the water—a Banff memory worth carrying forward.</p>
+            <p class="product-memory-delivery"><b>Letter to our family</b> · Delivers June 29, 2030 at 9:30 PM</p>
+            <div class="product-memory-tags" aria-label="Memory tags"><span>Mount Rundle</span><span>Vermilion Lakes</span><span>Banff</span><span>Sunset</span><span>Family trip</span></div>
+          </div>
         </div>
         <div class="product-feature-copy">
           <div class="product-status product-status--live"><span></span>Available worldwide</div>

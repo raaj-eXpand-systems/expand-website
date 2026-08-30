@@ -55,9 +55,17 @@ for (const file of pages.keys()) {
 
 const products = fs.readFileSync(path.join(root, 'products.html'), 'utf8')
 const home = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
+const sunsetAssets = [640, 1200, 1920].flatMap(width => ['jpg', 'webp'].map(extension => `images/mount-rundle-vermilion-lakes-sunset-${width}.${extension}`))
+for (const asset of sunsetAssets) {
+  if (!fs.existsSync(path.join(root, asset))) failures.push(`responsive Narratrace image asset ${asset}`)
+}
+if (fs.existsSync(path.join(root, 'images/narratrace-family-memory.png'))) failures.push('obsolete Narratrace wedding image asset')
 for (const [file, html] of [['index.html', home], ['products.html', products]]) {
   if (!html.includes('href="https://getnarratrace.com/"')) failures.push(`${file}: canonical Narratrace call to action`)
   if (!html.includes('Available worldwide')) failures.push(`${file}: global production availability status`)
+  if (!html.includes('mount-rundle-vermilion-lakes-sunset-640.webp')) failures.push(`${file}: responsive Mount Rundle sunset image`)
+  if (!html.includes('Sunset at Vermilion Lakes')) failures.push(`${file}: approved Vermilion Lakes sunset context`)
+  if (/family wedding|Chicago|Margaret|Harold|1967|sunrise|first light/i.test(html)) failures.push(`${file}: obsolete Narratrace example context`)
 }
 for (const route of ['privacy', 'terms', 'cookies']) {
   if (!products.includes(`href="https://getnarratrace.com/${route}"`)) failures.push(`products.html: canonical Narratrace ${route} link`)
@@ -70,6 +78,9 @@ if (!products.includes('Narratrace does not currently connect to YouTube or Amaz
 }
 if (!products.includes('Send memories now or later through recipient review and revocable, expiring access links.')) {
   failures.push('products.html: verified recipient delivery safeguards')
+}
+for (const context of ['Mount Rundle', 'Vermilion Lakes', 'Banff', 'Sunset', 'Family trip', 'Letter to our family', 'June 29, 2030 at 9:30 PM']) {
+  if (!products.includes(context)) failures.push(`products.html: Narratrace example context ${context}`)
 }
 
 const jsonLdMatch = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)
