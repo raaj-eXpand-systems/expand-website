@@ -46,5 +46,17 @@
       "destination": "/about.html",
       "permanent": true
     }
-  ]
+  ],
+  "routes": [
+    {
+      "src": "/.*(?:\\.|%(?:25)*(?:2[eE]))(?:(?:[mM]|%(?:25)*(?:6[dD]|4[dD]))(?:[dD]|%(?:25)*(?:64|44))(?:(?:[xX]|%(?:25)*(?:78|58)))?|(?:[mM]|%(?:25)*(?:6[dD]|4[dD]))(?:[aA]|%(?:25)*(?:61|41))(?:[rR]|%(?:25)*(?:72|52))(?:[kK]|%(?:25)*(?:6[bB]|4[bB]))(?:[dD]|%(?:25)*(?:64|44))(?:[oO]|%(?:25)*(?:6[fF]|4[fF]))(?:[wW]|%(?:25)*(?:77|57))(?:[nN]|%(?:25)*(?:6[eE]|4[eE])))(?:[^a-zA-Z0-9].*)?",
+      "status": 404,
+      "headers": {
+        "Cache-Control": "no-store",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  ],
+  "outputDirectory": "dist",
+  "buildCommand": "node scripts/vercel-build.mjs"
 }

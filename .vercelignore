@@ -4,3 +4,7 @@
 **/.env*
 **/*secret*
 **/*credential*
+# Private documentation must never enter public deployments.
+**/*.[mM][dD]
+**/*.[mM][dD][xX]
+**/*.[mM][aA][rR][kK][dD][oO][wW][nN]
