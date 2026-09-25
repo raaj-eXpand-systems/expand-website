@@ -79,6 +79,11 @@
       <div class="contact-form">
         <h3>Send a message</h3>
         <form action="https://formspree.io/f/xaqgepbw" method="POST">
+          <!-- Formspree discards submissions with a populated honeypot. -->
+          <div style="display:none" aria-hidden="true">
+            <label for="contact-gotcha">Leave this field empty</label>
+            <input type="text" id="contact-gotcha" name="_gotcha" tabindex="-1" autocomplete="off" />
+          </div>
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="First and last name" required />
